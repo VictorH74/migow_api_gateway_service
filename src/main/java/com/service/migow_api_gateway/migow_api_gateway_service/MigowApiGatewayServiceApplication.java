@@ -29,16 +29,6 @@ public class MigowApiGatewayServiceApplication {
 						.path("/ue-s/**")
 						.filters(f -> f.rewritePath("/ue-s/(?<segment>.*)", "/api/v1/${segment}"))
 						.uri("http://localhost:8083"))
-				// .route("users-service", r -> r.path("/users").filters(f ->
-				// f.rewritePath("/resource-server/users/(?<segment>.*)",
-				// "/${segment}")).uri("http://localhost:8081/"))
-				// .route("path_route", r -> r.path("/get")
-				// .uri("http://httpbin.org"))
-				// .route("host_route", r -> r.host("*.myhost.org")
-				// .uri("http://httpbin.org"))
-				// .route("rewrite_route", r -> r.host("*.rewrite.org")
-				// .filters(f -> f.rewritePath("/foo/(?<segment>.*)", "/${segment}"))
-				// .uri("http://httpbin.org"))
 				.build();
 	}
 
