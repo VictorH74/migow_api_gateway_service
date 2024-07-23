@@ -25,7 +25,7 @@ public class MigowApiGatewayServiceApplication {
 						.path("/p-s/**")
 						.filters(f -> f.rewritePath("/p-s/(?<segment>.*)", "/api/v1/${segment}"))
 						.uri("http://localhost:8082"))
-				.route("users-service", r -> r
+				.route("user-event-service", r -> r
 						.path("/ue-s/**")
 						.filters(f -> f.rewritePath("/ue-s/(?<segment>.*)", "/api/v1/${segment}"))
 						.uri("http://localhost:8083"))
